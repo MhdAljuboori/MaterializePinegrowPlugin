@@ -512,6 +512,49 @@ $(function() {
         //col.preview_image = 'navbar.png';
         col.code = '<div class="col s12 m6"></div>';
         col.tags = 'major';
+        col.sections = {
+            'materialize.column' : {
+                name : 'Column options',
+                fields : {
+                    'materialize.column.m-size' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        name: 'Medium Screen Size',
+                        options: [
+                            {key: 'm1', name: "m1"},
+                            {key: 'm2', name: "m2"},
+                            {key: 'm3', name: "m3"},
+                            {key: 'm4', name: "m4"},
+                            {key: 'm5', name: "m5"},
+                            {key: 'm6', name: "m6"},
+                            {key: 'm7', name: "m7"},
+                            {key: 'm8', name: "m8"},
+                            {key: 'm9', name: "m9"},
+                            {key: 'm10', name: "m10"},
+                            {key: 'm11', name: "m11"}
+                        ]
+                    },
+                    'materialize.column.s-size' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        name: 'Small Screen Size',
+                        options: [
+                            {key: 's1', name: "s1"},
+                            {key: 's2', name: "s2"},
+                            {key: 's3', name: "s3"},
+                            {key: 's4', name: "s4"},
+                            {key: 's5', name: "s5"},
+                            {key: 's6', name: "s6"},
+                            {key: 's7', name: "s7"},
+                            {key: 's8', name: "s8"},
+                            {key: 's9', name: "s9"},
+                            {key: 's10', name: "s10"},
+                            {key: 's11', name: "s11"}
+                        ]
+                    }
+                }
+            }
+        };
         f.addComponentType(col);
 
 
