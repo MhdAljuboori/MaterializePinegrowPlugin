@@ -108,6 +108,60 @@ $(function() {
         f.addComponentType(icons);
 
 
+        var anything = new PgComponentType('materialize.anything', '');
+        anything.selector = '*';
+        anything.parent_selector = 'body';
+        anything.sections = {
+          'materialize.anything' : {
+             name: "General Options",
+             fields: {
+                'materialize.anything.align' : {
+                    type : 'select',
+                    action: 'apply_class',
+                    show_empty: true,
+                    name: 'Align',
+                    options: [
+                        {key: 'left-align', name: "Align Left"},
+                        {key: 'right-align', name: "Align Right"},
+                        {key: 'center-align', name: "Align Center"}
+                    ]
+                },
+                'materialize.anything.floating' : {
+                    type : 'select',
+                    action: 'apply_class',
+                    show_empty: true,
+                    name: 'Floating',
+                    options: [
+                        {key: 'left', name: "Left"},
+                        {key: 'right', name: "Right"}
+                    ]
+                },
+                'materialize.anything.hide' : {
+                    type : 'select',
+                    action: 'apply_class',
+                    show_empty: true,
+                    name: 'Hide',
+                    options: [
+                        {key: 'hide', name: "Hidden for all Devices"},
+                        {key: 'hide-on-small-only', name: "Hidden for Mobile Only"},
+                        {key: 'hide-on-med-only', name: "Hidden for Tablet Only"},
+                        {key: 'hide-on-med-and-down', name: "Hidden for Tablet and Below"},
+                        {key: 'hide-on-med-and-up', name: "Hidden for Tablet and Above"},
+                        {key: 'hide-on-large-only', name: "Hidden for Desktop Only"}
+                    ]
+                },
+                'materialize.anything.truncate' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'truncate',
+                    name: 'Truncate?'
+                }
+             }
+          }
+        };
+        f.addComponentType(anything);
+
+
         var navbar = new PgComponentType('materialize.navbar', 'Navbar');
         navbar.selector = '.navbar-container';
         navbar.parent_selector = 'body';
