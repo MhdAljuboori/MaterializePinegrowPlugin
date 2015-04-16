@@ -639,12 +639,17 @@ $(function() {
         videoContainer.tags = 'major';
         videoContainer.sections = {
             'materialize.video-container' : {
-                type : 'checkbox',
-                action: 'apply_class',
-                value: 'no-controls',
-                name: 'No Controls'
+                name : 'Dropdown Options',
+                fields : {
+                    'materialize.video-container.no-control' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'no-controls',
+                        name: 'No Controls'
+                    }
+                }
             }
-        }
+        };
         f.addComponentType(videoContainer);
 
 
@@ -656,14 +661,6 @@ $(function() {
             <source src="" type="video/mp4">\
         </video>';
         videoResponsive.tags = 'major';
-        videoResponsive.sections = {
-            'materialize.responsive-video' : {
-                type : 'checkbox',
-                action: 'apply_class',
-                value: 'no-controls',
-                name: 'No Controls'
-            }
-        }
         f.addComponentType(videoResponsive);
 
 
