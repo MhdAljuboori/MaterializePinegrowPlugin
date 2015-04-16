@@ -679,7 +679,7 @@ $(function() {
         f.addComponentType(cardContent);
 
 
-        var cardAction = new PgComponentType('materialize.card-action', 'Card Content');
+        var cardAction = new PgComponentType('materialize.card-action', 'Card Action');
         cardAction.selector = '.card-action';
         cardAction.parent_selector = '.card';
         //cardAction.preview_image = 'navbar.png';
