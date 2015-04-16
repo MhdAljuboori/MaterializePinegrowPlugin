@@ -600,6 +600,17 @@ $(function() {
         f.addComponentType(container);
 
 
+        var blockquote = new PgComponentType('materialize.blockquote', 'Blockquote');
+        blockquote.selector = 'blockquote';
+        blockquote.parent_selector = 'body';
+        //blockquote.preview_image = 'navbar.png';
+        blockquote.code = '<blockquote>\
+          This is an example quotation that uses the blockquote tag.\
+        </blockquote>';
+        blockquote.tags = 'major';
+        f.addComponentType(blockquote);
+
+
         var verAlign = new PgComponentType('materialize.verAlign', 'Vertical Align');
         verAlign.selector = '.valign-wrapper';
         verAlign.parent_selector = 'body';
@@ -1427,7 +1438,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
