@@ -508,6 +508,17 @@ $(function() {
         f.addComponentType(container);
 
 
+        var verAlign = new PgComponentType('materialize.verAlign', 'Vertical Align');
+        verAlign.selector = '.valign-wrapper';
+        verAlign.parent_selector = 'body';
+        //verAlign.preview_image = 'navbar.png';
+        verAlign.code = '<div class="valign-wrapper">\
+          <h5 class="valign">This should be vertically aligned</h5>\
+        </div>';
+        verAlign.tags = 'major';
+        f.addComponentType(verAlign);
+
+
         var row = new PgComponentType('materialize.row', 'Row');
         row.selector = '.row';
         row.parent_selector = 'body';
@@ -1235,7 +1246,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, section, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
