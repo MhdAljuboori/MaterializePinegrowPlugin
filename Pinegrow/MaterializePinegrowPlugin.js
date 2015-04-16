@@ -45,7 +45,7 @@ $(function() {
             return null;
         }
 
-        var icons = new PgComponentType('materialize.icons', 'icon');
+        var icons = new PgComponentType('materialize.icons', 'Icon');
         icons.selector = '[class^="mdi-"]*';
         icons.parent_selector = 'body';
         // icons.preview_image = 'navbar.jpg';
@@ -89,6 +89,17 @@ $(function() {
                         {key: 'small', name: "Small"},
                         {key: 'medium', name: "Medium"},
                         {key: 'large', name: "Large"}
+                    ]
+                },
+                'materialize.icons.align' : {
+                    type : 'select',
+                    action: 'apply_class',
+                    show_empty: true,
+                    name: 'Icon Align',
+                    options: [
+                        {key: 'prefix', name: "Prefix"},
+                        {key: 'left', name: "Left"},
+                        {key: 'right', name: "Right"}
                     ]
                 }
              }
@@ -209,7 +220,7 @@ $(function() {
 
 
         var searchBar = new PgComponentType('materialize.search-bar', 'Search Bar');
-        searchBar.selector = 'form';
+        searchBar.selector = 'form[data-pg-collapsed]';
         searchBar.parent_selector = '.nav-wrapper';
         //searchBar.preview_image = 'navbar.png';
         searchBar.code = '<form>\
@@ -703,6 +714,233 @@ $(function() {
         f.addComponentType(cardPanel);
 
 
+        var form = new PgComponentType('materialize.form', 'Form');
+        form.parent_selector = 'body';
+        //form.preview_image = 'navbar.png';
+        form.code = '<div class="row">\
+          <form class="col s12">\
+            <div class="row">\
+              <div class="input-field col s6">\
+                <input placeholder="Placeholder" id="first_name" type="text" class="validate">\
+                <label for="first_name">First Name</label>\
+              </div>\
+              <div class="input-field col s6">\
+                <input id="last_name" type="text" class="validate">\
+                <label for="last_name">Last Name</label>\
+              </div>\
+            </div>\
+            <div class="row">\
+              <div class="input-field col s12">\
+                <i class="mdi-action-highlight-remove prefix"></i>\
+                <input disabled value="I am not editable" id="disabled" type="text" class="validate">\
+                <label for="disabled">Disabled</label>\
+              </div>\
+            </div>\
+            <div class="input-field col s12">\
+              <select>\
+                <option value="" disabled selected>Choose your option</option>\
+                <option value="1">Option 1</option>\
+                <option value="2">Option 2</option>\
+                <option value="3">Option 3</option>\
+              </select>\
+              <label>Materialize Select</label>\
+            </div>\
+            <div class="row">\
+              <div class="input-field col s12">\
+                <textarea id="textarea1" class="materialize-textarea"></textarea>\
+                <label for="textarea1">Message</label>\
+              </div>\
+            </div>\
+            <input type="submit" class="btn red" value="Stuff">\
+          </form>\
+        </div>';
+        form.tags = 'major';
+        f.addComponentType(form);
+
+
+        var radioButton = new PgComponentType('materialize.radio-button', 'Radio Button');
+        radioButton.selector = 'input[type="radio"]';
+        radioButton.parent_selector = 'body';
+        radioButton.sections = {
+            'materialize.radio-button' : {
+                name : 'Radio Options',
+                fields : {
+                    'materialize.radio-button.with-gap' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'with-gap',
+                        name: 'White Gap?'
+                    }
+                }
+            }
+        };
+        f.addComponentType(radioButton);
+
+
+        var checkbox = new PgComponentType('materialize.checkbox', 'Checkbox');
+        checkbox.selector = 'input[type="checkbox"]';
+        checkbox.parent_selector = 'body';
+        checkbox.sections = {
+            'materialize.checkbox' : {
+                name : 'Checkbox Options',
+                fields : {
+                    'materialize.checkbox.filled-in' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'filled-in',
+                        name: 'Filled in?'
+                    }
+                }
+            }
+        };
+        f.addComponentType(checkbox);
+
+
+        var switchInput = new PgComponentType('materialize.switch-input', 'Switch');
+        switchInput.selector = '.switch';
+        switchInput.parent_selector = 'body';
+        switchInput.code = '<div class="switch">\
+          <label>\
+            Off\
+            <input type="checkbox">\
+            <span class="lever"></span>\
+            On\
+          </label>\
+        </div>';
+        f.addComponentType(switchInput);
+
+
+        var fileField = new PgComponentType('materialize.file-field', 'File Field');
+        fileField.selector = '.file-field';
+        fileField.parent_selector = 'body';
+        fileField.code = '<div class="file-field input-field">\
+          <input class="file-path validate" type="text"/>\
+          <div class="btn">\
+            <span>File</span>\
+            <input type="file" />\
+          </div>\
+        </div>';
+        f.addComponentType(fileField);
+
+
+        var rangeField = new PgComponentType('materialize.range-field', 'Range Field');
+        rangeField.selector = '.range-field';
+        rangeField.parent_selector = 'body';
+        rangeField.code = '<p class="range-field">\
+          <input type="range" id="test5" min="0" max="100" />\
+        </p>';
+        rangeField.sections = {
+          'materialize.range-field' : {
+            name: 'Range Field Options',
+            fields : {
+              'materialize.range-field.min' : {
+                  type : 'text',
+                  name : 'Min value',
+                  live_update: true,
+                  action : 'custom',
+                  get_value: function(obj) {
+                      var $el = obj.data;
+                      var pgel = new pgQuery($el.find('input[type="range"]'));
+                      return pgel.attr('min');
+                  },
+                  set_value: function(obj, value, values, oldValue, eventType) {
+                      var $el = obj.data;
+                      var pgel = new pgQuery($el.find('input[type="range"]'));
+                      pgel.attr('min', value);
+                      return value;
+                  }
+              },
+              'materialize.range-field.max' : {
+                  type : 'text',
+                  name : 'Max value',
+                  live_update: true,
+                  action : 'custom',
+                  get_value: function(obj) {
+                      var $el = obj.data;
+                      var pgel = new pgQuery($el.find('input[type="range"]'));
+                      return pgel.attr('max');
+                  },
+                  set_value: function(obj, value, values, oldValue, eventType) {
+                      var $el = obj.data;
+                      var pgel = new pgQuery($el.find('input[type="range"]'));
+                      pgel.attr('max', value);
+                      return value;
+                  }
+              }
+            }
+          }
+        };
+        f.addComponentType(rangeField);
+
+
+        var formInput = new PgComponentType('materialize.form-input', 'Form Input');
+        formInput.selector = 'input:not([type="submit"])';
+        formInput.parent_selector = 'body';
+        formInput.sections = {
+            'materialize.form-input' : {
+                name : 'Form Input Options',
+                fields : {
+                    'materialize.form-input.validate' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'validate',
+                        name: 'Validate?'
+                    },
+                    'materialize.form-input.length' : {
+                        type : 'text',
+                        name : 'Character Length',
+                        live_update: true,
+                        action : 'custom',
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('length');
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            pgel.attr('length', value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(formInput);
+
+
+        var inputField = new PgComponentType('materialize.form-input-field', 'Form Input Field');
+        inputField.selector = 'input-field';
+        inputField.parent_selector = 'body';
+        inputField.code = '<div class="input-field"></div>'
+        f.addComponentType(inputField);
+
+
+        var selectField = new PgComponentType('materialize.select-field', 'Select Field');
+        selectField.selector = 'select';
+        selectField.parent_selector = 'body';
+        selectField.code = '<select class="browser-default">\
+          <option value="" disabled selected>Choose your option</option>\
+          <option value="1">Option 1</option>\
+          <option value="2">Option 2</option>\
+          <option value="3">Option 3</option>\
+        </select>'
+        selectField.sections = {
+            'materialize.select-field' : {
+                name : 'Select Field Options',
+                fields : {
+                    'materialize.select-field.browser-default' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'browser-default',
+                        name: 'Browser Default?'
+                    }
+                }
+            }
+        };
+        f.addComponentType(selectField);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -741,7 +979,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, footer]);
 
         f.addLibSection(libsection);
    });
