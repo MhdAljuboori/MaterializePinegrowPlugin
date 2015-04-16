@@ -168,6 +168,12 @@ $(function() {
                     action: 'apply_class',
                     value: 'truncate',
                     name: 'Truncate?'
+                },
+                'materialize.anything.flow-text' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'flow-text',
+                    name: 'Flow Text'
                 }
              }
           }
