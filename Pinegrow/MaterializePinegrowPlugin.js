@@ -499,13 +499,13 @@ $(function() {
         f.addComponentType(dropdown);
 
 
-        var row = new PgComponentType('materialize.row', 'Row');
-        row.selector = '.row';
-        row.parent_selector = 'body';
-        //row.preview_image = 'navbar.png';
-        row.code = '<div class="row"></div>';
-        row.tags = 'major';
-        f.addComponentType(row);
+        var container = new PgComponentType('materialize.container', 'Container');
+        container.selector = '.container';
+        container.parent_selector = 'body';
+        //container.preview_image = 'navbar.png';
+        container.code = '<div class="container"></div>';
+        container.tags = 'major';
+        f.addComponentType(container);
 
 
         var row = new PgComponentType('materialize.row', 'Row');
@@ -515,6 +515,24 @@ $(function() {
         row.code = '<div class="row"></div>';
         row.tags = 'major';
         f.addComponentType(row);
+
+
+        var divider = new PgComponentType('materialize.divider', 'Divider');
+        divider.selector = '.divider';
+        divider.parent_selector = 'body';
+        //divider.preview_image = 'navbar.png';
+        divider.code = '<div class="divider"></div>';
+        divider.tags = 'major';
+        f.addComponentType(divider);
+
+
+        var section = new PgComponentType('materialize.section', 'Section');
+        section.selector = '.section';
+        section.parent_selector = 'body';
+        //section.preview_image = 'navbar.png';
+        section.code = '<div class="section"></div>';
+        section.tags = 'major';
+        f.addComponentType(section);
 
 
         var col = new PgComponentType('materialize.column', 'Column');
@@ -1217,7 +1235,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, section, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
