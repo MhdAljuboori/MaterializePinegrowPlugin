@@ -150,6 +150,19 @@ $(function() {
                         {key: 'hide-on-large-only', name: "Hidden for Desktop Only"}
                     ]
                 },
+                'materialize.anything.shadow' : {
+                    type : 'select',
+                    action: 'apply_class',
+                    show_empty: true,
+                    name: 'Shadow',
+                    options: [
+                        {key: 'z-depth-1', name: "Z Depth 1"},
+                        {key: 'z-depth-2', name: "Z Depth 2"},
+                        {key: 'z-depth-3', name: "Z Depth 3"},
+                        {key: 'z-depth-4', name: "Z Depth 4"},
+                        {key: 'z-depth-5', name: "Z Depth 5"}
+                    ]
+                },
                 'materialize.anything.truncate' : {
                     type : 'checkbox',
                     action: 'apply_class',
