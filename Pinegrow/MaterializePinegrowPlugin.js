@@ -521,15 +521,36 @@ $(function() {
         col.selector = '.col';
         col.parent_selector = '.row';
         //col.preview_image = 'navbar.png';
-        col.code = '<div class="col s12 m6"></div>';
+        col.code = '<div class="col s12 m4 l4"></div>';
         col.tags = 'major';
         col.sections = {
             'materialize.column' : {
                 name : 'Column options',
                 fields : {
+                    'materialize.column.l-size' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Medium Screen Size',
+                        options: [
+                            {key: 'l1', name: "l1"},
+                            {key: 'l2', name: "l2"},
+                            {key: 'l3', name: "l3"},
+                            {key: 'l4', name: "l4"},
+                            {key: 'l5', name: "l5"},
+                            {key: 'l6', name: "l6"},
+                            {key: 'l7', name: "l7"},
+                            {key: 'l8', name: "l8"},
+                            {key: 'l9', name: "l9"},
+                            {key: 'l10', name: "l10"},
+                            {key: 'l11', name: "l11"},
+                            {key: 'l12', name: "l12"},
+                        ]
+                    },
                     'materialize.column.m-size' : {
                         type : 'select',
                         action: 'apply_class',
+                        show_empty: true,
                         name: 'Medium Screen Size',
                         options: [
                             {key: 'm1', name: "m1"},
@@ -549,6 +570,7 @@ $(function() {
                     'materialize.column.s-size' : {
                         type : 'select',
                         action: 'apply_class',
+                        show_empty: true,
                         name: 'Small Screen Size',
                         options: [
                             {key: 's1', name: "s1"},
