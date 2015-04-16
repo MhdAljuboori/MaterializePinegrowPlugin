@@ -542,7 +542,8 @@ $(function() {
                             {key: 'm8', name: "m8"},
                             {key: 'm9', name: "m9"},
                             {key: 'm10', name: "m10"},
-                            {key: 'm11', name: "m11"}
+                            {key: 'm11', name: "m11"},
+                            {key: 'm12', name: "m12"},
                         ]
                     },
                     'materialize.column.s-size' : {
@@ -560,7 +561,8 @@ $(function() {
                             {key: 's8', name: "s8"},
                             {key: 's9', name: "s9"},
                             {key: 's10', name: "s10"},
-                            {key: 's11', name: "s11"}
+                            {key: 's11', name: "s11"},
+                            {key: 's12', name: "s12"}
                         ]
                     }
                 }
