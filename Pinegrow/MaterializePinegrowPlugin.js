@@ -48,7 +48,7 @@ $(function() {
         var icons = new PgComponentType('materialize.icons', 'Icon');
         icons.selector = '[class^="mdi-"]*';
         icons.parent_selector = 'body';
-        // icons.preview_image = 'navbar.jpg';
+        icons.preview_image = 'icon.png';
         icons.code = '<i class="mdi-action-3d-rotation"></i>';
         icons.tags = 'major';
         icons.sections = {
@@ -242,7 +242,7 @@ $(function() {
         var navbarLogo = new PgComponentType('materialize.navbar-logo', 'Logo');
         navbarLogo.selector = '.brand-logo';
         navbarLogo.parent_selector = '.nav-wrapper';
-        //navbarLogo.preview_image = 'navbar.jpg';
+        navbarLogo.preview_image = 'logo.png';
         navbarLogo.code = '<a href="#" class="brand-logo">Logo</a>';
         navbarLogo.tags = 'major';
         navbarLogo.sections = {
@@ -269,7 +269,7 @@ $(function() {
         var navMobile = new PgComponentType('materialize.navbar-list', 'Navbar List');
         navMobile.selector = '#nav-mobile';
         navMobile.parent_selector = '.nav-wrapper';
-        //navMobile.preview_image = 'navbar.png';
+        navMobile.preview_image = 'navMobile.png';
         navMobile.code = '<ul id="nav-mobile" class="right hide-on-med-and-down">\
           <li><a href="#">Sass</a></li>\
           <li><a href="#">Components</a></li>\
@@ -298,7 +298,7 @@ $(function() {
         var navMobileElement = new PgComponentType('materialize.navbar-list-element', 'Navbar List Element');
         navMobileElement.selector = '#nav-mobile > li';
         navMobileElement.parent_selector = '#nav-mobile';
-        //navMobileElement.preview_image = 'navbar.png';
+        navMobileElement.preview_image = 'navElement.png';
         navMobileElement.code = '<li><a href="#">Element</a></li>';
         navMobileElement.tags = 'major';
         navMobileElement.sections = {
@@ -320,7 +320,7 @@ $(function() {
         var searchBar = new PgComponentType('materialize.search-bar', 'Search Bar');
         searchBar.selector = 'form[data-pg-collapsed]';
         searchBar.parent_selector = '.nav-wrapper';
-        //searchBar.preview_image = 'navbar.png';
+        searchBar.preview_image = 'searchBar.png';
         searchBar.code = '<form>\
           <div class="input-field">\
             <input id="search" type="search" required>\
@@ -335,7 +335,7 @@ $(function() {
         var collapseList = new PgComponentType('materialize.collapse-list', 'Collapse List');
         collapseList.selector = '.side-nav';
         collapseList.parent_selector = '.nav-wrapper';
-        //collapseList.preview_image = 'navbar.png';
+        collapseList.preview_image = 'collapseList.png';
         collapseList.code = '<ul class="side-nav" id="mobile-demo">\
           <li><a href="#">Sass</a></li>\
           <li><a href="#">Components</a></li>\
@@ -349,7 +349,7 @@ $(function() {
         var collapseButton = new PgComponentType('materialize.collapse-button', 'Collapse Button');
         collapseButton.selector = '.button-collapse';
         collapseButton.parent_selector = '.nav-wrapper';
-        //collapseButton.preview_image = 'navbar.png';
+        collapseButton.preview_image = 'collapseButton.png';
         collapseButton.code = '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>';
         collapseButton.on_inserted = function() {
           alert('Add $(".button-collapse").sideNav(); to your $(document).ready');
@@ -361,7 +361,7 @@ $(function() {
         var collection = new PgComponentType('materialize.collection', 'Collection');
         collection.selector = '.collection';
         collection.parent_selector = 'body';
-        //collection.preview_image = 'navbar.png';
+        collection.preview_image = 'collection.png';
         collection.code = '<ul class="collection">\
           <li class="collection-item">Alvin<span class="badge">1</span></li>\
           <li class="collection-item">Alvin</li>\
@@ -388,7 +388,7 @@ $(function() {
         var collectionItem = new PgComponentType('materialize.collection-item', 'Collection Item');
         collectionItem.selector = 'li.collection-item';
         collectionItem.parent_selector = '.collection';
-        //collectionItem.preview_image = 'navbar.png';
+        collectionItem.preview_image = 'collectionItem.png';
         collectionItem.code = '<li class="collection-item">Alvin</li>';
         collectionItem.tags = 'major';
         collectionItem.sections = {
@@ -410,7 +410,7 @@ $(function() {
         var linkCollectionItem = new PgComponentType('materialize.link-collection-item', 'Link Collection Item');
         linkCollectionItem.selector = 'a.collection-item';
         linkCollectionItem.parent_selector = '.collection';
-        //linkCollectionItem.preview_image = 'navbar.png';
+        linkCollectionItem.preview_image = 'linkCollectionItem.png';
         linkCollectionItem.code = '<a href="#!" class="collection-item">Item</a>';
         linkCollectionItem.tags = 'major';
         linkCollectionItem.sections = {
@@ -432,7 +432,7 @@ $(function() {
         var avatarCollectionItem = new PgComponentType('materialize.avatar-collection-item', 'Avatar Collection Item');
         avatarCollectionItem.selector = '.collection-item.avatar';
         avatarCollectionItem.parent_selector = '.collection';
-        //avatarCollectionItem.preview_image = 'navbar.png';
+        avatarCollectionItem.preview_image = 'avatarCollectionItem.png';
         avatarCollectionItem.code = '<li class="collection-item avatar">\
           <img src="images/yuna.jpg" alt="" class="circle">\
           <span class="title">Title</span>\
@@ -448,7 +448,7 @@ $(function() {
         var collectionHeader = new PgComponentType('materialize.collection-header-item', 'Collection Header Item');
         collectionHeader.selector = '.collection-header';
         collectionHeader.parent_selector = '.collection';
-        //collectionHeader.preview_image = 'navbar.png';
+        collectionHeader.preview_image = 'collectionHeader.png';
         collectionHeader.code = '<li class="collection-header"><h4>Collection Header</h4></li>';
         collectionHeader.tags = 'major';
         f.addComponentType(collectionHeader);
@@ -457,7 +457,7 @@ $(function() {
         var collectionItemWithSecondary = new PgComponentType('materialize.collection-item-with-secondary', 'Collection Item With Secondary');
         collectionItemWithSecondary.selector = '.has-secondary';
         collectionItemWithSecondary.parent_selector = '.collection';
-        //collectionItemWithSecondary.preview_image = 'navbar.png';
+        collectionItemWithSecondary.preview_image = 'collectionItemWithSecondary.png';
         collectionItemWithSecondary.code = '<li class="collection-item has-secondary"><div>Alvin<a href="#!" class="secondary-content"><i class="mdi-content-send"></i></a></div></li>';
         collectionItemWithSecondary.tags = 'major';
         f.addComponentType(collectionItemWithSecondary);
@@ -466,7 +466,7 @@ $(function() {
         var badge = new PgComponentType('materialize.badge', 'Badge');
         badge.selector = '.badge';
         badge.parent_selector = 'body';
-        //badge.preview_image = 'navbar.png';
+        badge.preview_image = 'badge.png';
         badge.code = '<span class="badge">144</span>';
         badge.tags = 'major';
         badge.sections = {
@@ -488,7 +488,7 @@ $(function() {
         var button = new PgComponentType('materialize.button', 'Button');
         button.selector = 'a';
         button.parent_selector = 'body';
-        //button.preview_image = 'navbar.png';
+        button.preview_image = 'button.png';
         button.code = '<a class="btn">Stuff</a>';
         button.tags = 'major';
         button.sections = {
@@ -539,7 +539,7 @@ $(function() {
         var fixedActionButton = new PgComponentType('materialize.button', 'Fixed Action Button');
         fixedActionButton.selector = '.fixed-action-btn';
         fixedActionButton.parent_selector = 'body';
-        //fixedActionButton.preview_image = 'navbar.png';
+        fixedActionButton.preview_image = 'fixedActionButton.png';
         fixedActionButton.code = '<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">\
           <a class="btn-floating btn-large red">\
             <i class="large mdi-editor-mode-edit"></i>\
@@ -558,7 +558,7 @@ $(function() {
         var dropdown = new PgComponentType('materialize.dropdown', 'Dropdown');
         dropdown.selector = '.dropdown-container';
         dropdown.parent_selector = 'body';
-        //dropdown.preview_image = 'navbar.png';
+        dropdown.preview_image = 'dropdown.png';
         dropdown.code = '<div class="dropdown-container">\
           <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>\
           <ul id="dropdown2" class="dropdown-content">\
@@ -600,8 +600,7 @@ $(function() {
         var container = new PgComponentType('materialize.container', 'Container');
         container.selector = '.container';
         container.parent_selector = 'body';
-        //container.preview_image = 'navbar.png';
-        container.code = '<div class="container"></div>';
+        container.code = '<div class="pg-empty-placeholder container"></div>';
         container.tags = 'major';
         f.addComponentType(container);
 
@@ -609,7 +608,7 @@ $(function() {
         var blockquote = new PgComponentType('materialize.blockquote', 'Blockquote');
         blockquote.selector = 'blockquote';
         blockquote.parent_selector = 'body';
-        //blockquote.preview_image = 'navbar.png';
+        blockquote.preview_image = 'blockquote.png';
         blockquote.code = '<blockquote>\
           This is an example quotation that uses the blockquote tag.\
         </blockquote>';
@@ -620,7 +619,6 @@ $(function() {
         var verAlign = new PgComponentType('materialize.verAlign', 'Vertical Align');
         verAlign.selector = '.valign-wrapper';
         verAlign.parent_selector = 'body';
-        //verAlign.preview_image = 'navbar.png';
         verAlign.code = '<div class="valign-wrapper">\
           <h5 class="valign">This should be vertically aligned</h5>\
         </div>';
@@ -631,8 +629,7 @@ $(function() {
         var row = new PgComponentType('materialize.row', 'Row');
         row.selector = '.row';
         row.parent_selector = 'body';
-        //row.preview_image = 'navbar.png';
-        row.code = '<div class="row"></div>';
+        row.code = '<div class="pg-empty-placeholder row"></div>';
         row.tags = 'major';
         f.addComponentType(row);
 
@@ -640,7 +637,6 @@ $(function() {
         var divider = new PgComponentType('materialize.divider', 'Divider');
         divider.selector = '.divider';
         divider.parent_selector = 'body';
-        //divider.preview_image = 'navbar.png';
         divider.code = '<div class="divider"></div>';
         divider.tags = 'major';
         f.addComponentType(divider);
@@ -649,7 +645,6 @@ $(function() {
         var videoContainer = new PgComponentType('materialize.video-container', 'Video Container');
         videoContainer.selector = '.video-container';
         videoContainer.parent_selector = 'body';
-        //videoContainer.preview_image = 'navbar.png';
         videoContainer.code = '<div class="video-container">\
             <iframe width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>\
         </div>';
@@ -673,7 +668,6 @@ $(function() {
         var videoResponsive = new PgComponentType('materialize.responsive-video', 'Video Responsive');
         videoResponsive.selector = '.responsive-video';
         videoResponsive.parent_selector = 'body';
-        //videoResponsive.preview_image = 'navbar.png';
         videoResponsive.code = '<video class="responsive-video" controls>\
             <source src="" type="video/mp4">\
         </video>';
@@ -684,8 +678,7 @@ $(function() {
         var section = new PgComponentType('materialize.section', 'Section');
         section.selector = '.section';
         section.parent_selector = 'body';
-        //section.preview_image = 'navbar.png';
-        section.code = '<div class="section"></div>';
+        section.code = '<div class="pg-empty-placeholder section"></div>';
         section.tags = 'major';
         f.addComponentType(section);
 
@@ -693,7 +686,7 @@ $(function() {
         var table = new PgComponentType('materialize.table', 'Table');
         table.selector = 'table';
         table.parent_selector = 'body';
-        //table.preview_image = 'navbar.png';
+        table.preview_image = 'table.png';
         table.code = '<table>\
             <thead>\
               <tr>\
@@ -747,8 +740,7 @@ $(function() {
         var col = new PgComponentType('materialize.column', 'Column');
         col.selector = '.col';
         col.parent_selector = '.row';
-        //col.preview_image = 'navbar.png';
-        col.code = '<div class="col s12 m4 l4"></div>';
+        col.code = '<div class="col s12 m4 l4"><h3>Column Header</h3></div>';
         col.tags = 'major';
         col.sections = {
             'materialize.column' : {
@@ -823,7 +815,7 @@ $(function() {
         var card = new PgComponentType('materialize.card', 'Card');
         card.selector = '.card';
         card.parent_selector = 'body';
-        //card.preview_image = 'navbar.png';
+        card.preview_image = 'card.png';
         card.code = '<div class="card blue-grey darken-1">\
             <div class="card-content white-text">\
               <span class="card-title">Card Title</span>\
@@ -860,7 +852,7 @@ $(function() {
         var cardImageContainer = new PgComponentType('materialize.card-image-container', 'Card Image Container');
         cardImageContainer.selector = '.card-image';
         cardImageContainer.parent_selector = '.card';
-        //cardImageContainer.preview_image = 'navbar.png';
+        cardImageContainer.preview_image = 'cardImage.png';
         cardImageContainer.code = '<div class="card-image">\
           <img src="images/sample-1.jpg">\
           <span class="card-title">Card Title</span>\
@@ -897,7 +889,7 @@ $(function() {
         var cardImage = new PgComponentType('materialize.card-image', 'Card Image');
         cardImage.selector = '.card-image > img';
         cardImage.parent_selector = '.card-image';
-        //cardImage.preview_image = 'navbar.png';
+        cardImage.preview_image = 'cardImage.png';
         cardImage.code = '<img src="images/sample-1.jpg">';
         cardImage.sections = {
             'materialize.card-image' : {
@@ -918,7 +910,7 @@ $(function() {
         var cardContent = new PgComponentType('materialize.card-content', 'Card Content');
         cardContent.selector = '.card-content';
         cardContent.parent_selector = '.card';
-        //cardContent.preview_image = 'navbar.png';
+        cardContent.preview_image = 'cardContent.png';
         cardContent.code = '<div class="card-content white-text">\
           <span class="card-title">Card Title</span>\
           <p>I am a very simple card. I am good at containing small bits of information.\
@@ -931,7 +923,7 @@ $(function() {
         var cardAction = new PgComponentType('materialize.card-action', 'Card Action');
         cardAction.selector = '.card-action';
         cardAction.parent_selector = '.card';
-        //cardAction.preview_image = 'navbar.png';
+        cardAction.preview_image = 'cardAction.png';
         cardAction.code = '<div class="card-action">\
           <a href="#">This is a link</a>\
           <a href="#">This is a link</a>\
@@ -943,7 +935,7 @@ $(function() {
         var cardReveal = new PgComponentType('materialize.card-reveal', 'Card Reveal');
         cardReveal.selector = '.card-reveal';
         cardReveal.parent_selector = '.card';
-        //cardReveal.preview_image = 'navbar.png';
+        cardReveal.preview_image = 'cardReveal.png';
         cardReveal.code = '<div class="card-reveal">\
           <span class="card-title grey-text text-darken-4">Card Title <i class="mdi-navigation-close right"></i></span>\
           <p>Here is some more information about this product that is only revealed once clicked on.</p>\
@@ -955,7 +947,7 @@ $(function() {
         var cardPanel = new PgComponentType('materialize.card-panel', 'Card Panel');
         cardPanel.selector = '.card-panel';
         cardPanel.parent_selector = 'body';
-        //cardPanel.preview_image = 'navbar.png';
+        cardPanel.preview_image = 'cardPanel.png';
         cardPanel.code = '<div class="card-panel teal">\
           <span class="white-text">I am a very simple card. I am good at containing small bits of information.\
           I am convenient because I require little markup to use effectively. I am similar to what is called a panel in other frameworks.\
@@ -967,7 +959,7 @@ $(function() {
 
         var form = new PgComponentType('materialize.form', 'Form');
         form.parent_selector = 'body';
-        //form.preview_image = 'navbar.png';
+        form.preview_image = 'form.png';
         form.code = '<div class="row">\
           <form class="col s12">\
             <div class="row">\
@@ -1050,6 +1042,7 @@ $(function() {
         var switchInput = new PgComponentType('materialize.switch-input', 'Switch');
         switchInput.selector = '.switch';
         switchInput.parent_selector = 'body';
+        switchInput.preview_image = 'switchInput.png';
         switchInput.code = '<div class="switch">\
           <label>\
             Off\
@@ -1064,6 +1057,7 @@ $(function() {
         var fileField = new PgComponentType('materialize.file-field', 'File Field');
         fileField.selector = '.file-field';
         fileField.parent_selector = 'body';
+        fileField.preview_image = 'fileField.png';
         fileField.code = '<div class="file-field input-field">\
           <input class="file-path validate" type="text"/>\
           <div class="btn">\
@@ -1077,6 +1071,7 @@ $(function() {
         var rangeField = new PgComponentType('materialize.range-field', 'Range Field');
         rangeField.selector = '.range-field';
         rangeField.parent_selector = 'body';
+        rangeField.preview_image = 'rangeField.png';
         rangeField.code = '<p class="range-field">\
           <input type="range" id="test5" min="0" max="100" />\
         </p>';
@@ -1163,6 +1158,7 @@ $(function() {
         var progressBar = new PgComponentType('materialize.progress-bar', 'Progress Bar');
         progressBar.selector = '.progress';
         progressBar.parent_selector = 'body';
+        progressBar.preview_image = 'progressBar.png';
         progressBar.code = '<div class="progress">\
             <div class="determinate" style="width: 70%"></div>\
         </div>'
@@ -1292,6 +1288,7 @@ $(function() {
         var preloadCircular = new PgComponentType('materialize.circular-preload', 'Circular Preload');
         preloadCircular.selector = '.preloader-wrapper';
         preloadCircular.parent_selector = 'body';
+        preloadCircular.preview_image = 'preloadCircular.png';
         preloadCircular.code = '<div class="preloader-wrapper big active">\
             <div class="spinner-layer spinner-blue-only">\
               <div class="circle-clipper left">\
@@ -1369,6 +1366,7 @@ $(function() {
         var selectField = new PgComponentType('materialize.select-field', 'Select Field');
         selectField.selector = 'select';
         selectField.parent_selector = 'body';
+        selectField.preview_image = 'selectField.png';
         selectField.code = '<select class="browser-default">\
           <option value="" disabled selected>Choose your option</option>\
           <option value="1">Option 1</option>\
@@ -1394,6 +1392,7 @@ $(function() {
         var pagination = new PgComponentType('materialize.pagination', 'Pagination');
         pagination.selector = '.pagination';
         pagination.parent_selector = 'body';
+        pagination.preview_image = 'pagination.png';
         pagination.code = '<ul class="pagination">\
             <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>\
             <li class="active"><a href="#!">1</a></li>\
@@ -1409,7 +1408,7 @@ $(function() {
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
-        //footer.preview_image = 'navbar.png';
+        footer.preview_image = 'footer.png';
         footer.code = '<footer class="page-footer">\
           <div class="container">\
             <div class="row">\
