@@ -941,6 +941,21 @@ $(function() {
         f.addComponentType(selectField);
 
 
+        var pagination = new PgComponentType('materialize.pagination', 'Pagination');
+        pagination.selector = '.pagination';
+        pagination.parent_selector = 'body';
+        pagination.code = '<ul class="pagination">\
+            <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>\
+            <li class="active"><a href="#!">1</a></li>\
+            <li class="waves-effect"><a href="#!">2</a></li>\
+            <li class="waves-effect"><a href="#!">3</a></li>\
+            <li class="waves-effect"><a href="#!">4</a></li>\
+            <li class="waves-effect"><a href="#!">5</a></li>\
+            <li class="waves-effect"><a href="#!"><i class="mdi-navigation-chevron-right"></i></a></li>\
+        </ul>';
+        f.addComponentType(pagination);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -979,7 +994,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, pagination, footer]);
 
         f.addLibSection(libsection);
    });
