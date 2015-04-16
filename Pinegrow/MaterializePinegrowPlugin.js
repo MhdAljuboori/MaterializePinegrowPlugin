@@ -911,6 +911,128 @@ $(function() {
         f.addComponentType(formInput);
 
 
+        var progressBar = new PgComponentType('materialize.progress-bar', 'Progress Bar');
+        progressBar.selector = '.progress';
+        progressBar.parent_selector = 'body';
+        progressBar.code = '<div class="progress">\
+            <div class="determinate" style="width: 70%"></div>\
+        </div>'
+        progressBar.sections = {
+            'materialize.progress-bar' : {
+                name : 'ProgressBar Options',
+                fields : {
+                    'materialize.progress-bar.width' : {
+                        type : 'text',
+                        name : 'Progress full (%)',
+                        live_update: true,
+                        action : 'custom',
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = $($el);
+                            var chel = $($el.find('.determinate'));
+                            if (chel) {
+                                var width = chel.width();
+                                var parentWidth = pgel.width();
+                                var percent = 100*width/parentWidth;
+                                return Math.round(percent);
+                            }
+                            return '';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgel = $($el.find('.determinate'));
+                            if (pgel) {
+                                pgel.width(value+"%");
+                                return value;
+                            }
+                            return '';
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(progressBar);
+
+
+        var determinate = new PgComponentType('materialize.determinate-progress-bar', 'Determinate');
+        determinate.selector = '.determinate';
+        determinate.parent_selector = '.progress';
+        determinate.code = '<div class="determinate" style="width: 70%"></div>'
+        determinate.sections = {
+            'materialize.determinate-progress-bar' : {
+                name : 'determinate Options',
+                fields : {
+                    'materialize.determinate-progress-bar.determinate' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'determinate',
+                        name: 'Determinate?'
+                    },
+                    'materialize.determinate-progress-bar.indeterminate' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'indeterminate',
+                        name: 'Indeterminate?'
+                    },
+                    'materialize.determinate-progress-bar.width' : {
+                        type : 'text',
+                        name : 'Progress full (%)',
+                        live_update: true,
+                        action : 'custom',
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = $($el).parent();
+                            var chel = $($el);
+                            if (chel) {
+                                var width = chel.width();
+                                var parentWidth = pgel.width();
+                                var percent = 100*width/parentWidth;
+                                return Math.round(percent);
+                            }
+                            return '';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgel = $($el.find('.determinate'));
+                            if (pgel) {
+                                pgel.width(value+"%");
+                                return value;
+                            }
+                            return '';
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(determinate);
+
+
+        var indeterminate = new PgComponentType('materialize.indeterminate-progress-bar', 'Indeterminate');
+        indeterminate.selector = '.indeterminate';
+        indeterminate.parent_selector = '.progress';
+        indeterminate.code = '<div class="indeterminate"></div>'
+        indeterminate.sections = {
+            'materialize.indeterminate-progress-bar' : {
+                name : 'Indeterminate Options',
+                fields : {
+                    'materialize.determinate-progress-bar.determinate' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'determinate',
+                        name: 'Determinate?'
+                    },
+                    'materialize.determinate-progress-bar.indeterminate' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'indeterminate',
+                        name: 'Indeterminate?'
+                    }
+                }
+            }
+        };
+        f.addComponentType(indeterminate);
+
+
         var inputField = new PgComponentType('materialize.form-input-field', 'Form Input Field');
         inputField.selector = 'input-field';
         inputField.parent_selector = 'body';
@@ -996,7 +1118,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, pagination, footer]);
 
         f.addLibSection(libsection);
    });
