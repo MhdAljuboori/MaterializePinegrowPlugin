@@ -676,6 +676,40 @@ $(function() {
         f.addComponentType(section);
 
 
+        var table = new PgComponentType('materialize.table', 'Table');
+        table.selector = 'table';
+        table.parent_selector = 'body';
+        //table.preview_image = 'navbar.png';
+        table.code = '<table>\
+            <thead>\
+              <tr>\
+                  <th data-field="id">Name</th>\
+                  <th data-field="name">Item Name</th>\
+                  <th data-field="price">Item Price</th>\
+              </tr>\
+            </thead>\
+            <tbody>\
+              <tr>\
+                <td>Alvin</td>\
+                <td>Eclair</td>\
+                <td>$0.87</td>\
+              </tr>\
+              <tr>\
+                <td>Alan</td>\
+                <td>Jellybean</td>\
+                <td>$3.76</td>\
+              </tr>\
+              <tr>\
+                <td>Jonathan</td>\
+                <td>Lollipop</td>\
+                <td>$7.00</td>\
+              </tr>\
+            </tbody>\
+          </table>';
+        table.tags = 'major';
+        f.addComponentType(table);
+
+
         var col = new PgComponentType('materialize.column', 'Column');
         col.selector = '.col';
         col.parent_selector = '.row';
@@ -1376,7 +1410,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, videoContainer, videoResponsive, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
