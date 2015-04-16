@@ -704,6 +704,26 @@ $(function() {
             </tbody>\
           </table>';
         table.tags = 'major';
+        table.sections = {
+            'materialize.table' : {
+                name : 'Table options',
+                fields : {
+                    'materialize.table.type' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Table type',
+                        options: [
+                            {key: 'bordered', name: "Bordered"},
+                            {key: 'striped', name: "Striped"},
+                            {key: 'hoverable', name: "Hoverable"},
+                            {key: 'centered', name: "Centered"},
+                            {key: 'responsive-table', name: "Responsive Table"}
+                        ]
+                    }
+                }
+            }
+        };
         f.addComponentType(table);
 
 
@@ -1412,4 +1432,3 @@ $(function() {
         f.addLibSection(libsection);
    });
 });
-vi
