@@ -1040,6 +1040,83 @@ $(function() {
         f.addComponentType(inputField);
 
 
+        var preloadCircular = new PgComponentType('materialize.circular-preload', 'Circular Preload');
+        preloadCircular.selector = '.preloader-wrapper';
+        preloadCircular.parent_selector = 'body';
+        preloadCircular.code = '<div class="preloader-wrapper big active">\
+            <div class="spinner-layer spinner-blue-only">\
+              <div class="circle-clipper left">\
+                <div class="circle"></div>\
+              </div><div class="gap-patch">\
+                <div class="circle"></div>\
+              </div><div class="circle-clipper right">\
+                <div class="circle"></div>\
+              </div>\
+            </div>\
+        </div>';
+        preloadCircular.sections = {
+            'materialize.circular-preload' : {
+                name : 'Circular Preload Options',
+                fields : {
+                    'materialize.circular-preload.active' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'active',
+                        name: 'Active?'
+                    },
+                    'materialize.circular-preload.size' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Icon Size',
+                        options: [
+                            {key: 'big', name: "Big"},
+                            {key: 'small', name: "Small"}
+                        ]
+                    }
+                }
+            }
+        };
+        f.addComponentType(preloadCircular);
+
+
+        var spinnerLayer = new PgComponentType('materialize.spinner-layer', 'Spinner Layer');
+        spinnerLayer.selector = '.spinner-layer';
+        spinnerLayer.parent_selector = '.preloader-wrapper';
+        spinnerLayer.code = '<div class="spinner-layer spinner-blue-only">\
+          <div class="circle-clipper left">\
+            <div class="circle"></div>\
+          </div><div class="gap-patch">\
+            <div class="circle"></div>\
+          </div><div class="circle-clipper right">\
+            <div class="circle"></div>\
+          </div>\
+        </div>';
+        spinnerLayer.sections = {
+            'materialize.spinner-layer' : {
+                name : 'Circular Preload Options',
+                fields : {
+                    'materialize.spinner-layer.color' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        name: 'Spinner Color',
+                        options: [
+                            {key: 'spinner-blue-only', name: "Blue Only"},
+                            {key: 'spinner-blue', name: "Blue"},
+                            {key: 'spinner-red-only', name: "Red Only"},
+                            {key: 'spinner-red', name: "Red"},
+                            {key: 'spinner-yellow-only', name: "Yellow Only"},
+                            {key: 'spinner-yellow', name: "Yellow"},
+                            {key: 'spinner-green-only', name: "Green Only"},
+                            {key: 'spinner-green', name: "Green"}
+                        ]
+                    }
+                }
+            }
+        };
+        f.addComponentType(spinnerLayer);
+
+
         var selectField = new PgComponentType('materialize.select-field', 'Select Field');
         selectField.selector = 'select';
         selectField.parent_selector = 'body';
@@ -1118,7 +1195,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
