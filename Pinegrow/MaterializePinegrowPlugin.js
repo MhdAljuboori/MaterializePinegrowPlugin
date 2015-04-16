@@ -162,6 +162,31 @@ $(function() {
         f.addComponentType(anything);
 
 
+        var img = new PgComponentType('materialize.img', '');
+        img.selector = 'img';
+        img.parent_selector = 'body';
+        img.sections = {
+          'materialize.img' : {
+             name: "Image Options",
+             fields: {
+                'materialize.img.responsive' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'responsive-img',
+                    name: 'Responsive Image'
+                },
+                'materialize.img.circle' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'circle',
+                    name: 'Circle Image'
+                }
+             }
+          }
+        };
+        f.addComponentType(img);
+
+
         var navbar = new PgComponentType('materialize.navbar', 'Navbar');
         navbar.selector = '.navbar-container';
         navbar.parent_selector = 'body';
@@ -589,6 +614,44 @@ $(function() {
         divider.code = '<div class="divider"></div>';
         divider.tags = 'major';
         f.addComponentType(divider);
+
+
+        var videoContainer = new PgComponentType('materialize.video-container', 'Video Container');
+        videoContainer.selector = '.video-container';
+        videoContainer.parent_selector = 'body';
+        //videoContainer.preview_image = 'navbar.png';
+        videoContainer.code = '<div class="video-container">\
+            <iframe width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>\
+        </div>';
+        videoContainer.tags = 'major';
+        videoContainer.sections = {
+            'materialize.video-container' : {
+                type : 'checkbox',
+                action: 'apply_class',
+                value: 'no-controls',
+                name: 'No Controls'
+            }
+        }
+        f.addComponentType(videoContainer);
+
+
+        var videoResponsive = new PgComponentType('materialize.responsive-video', 'Video Responsive');
+        videoResponsive.selector = '.responsive-video';
+        videoResponsive.parent_selector = 'body';
+        //videoResponsive.preview_image = 'navbar.png';
+        videoResponsive.code = '<video class="responsive-video" controls>\
+            <source src="" type="video/mp4">\
+        </video>';
+        videoResponsive.tags = 'major';
+        videoResponsive.sections = {
+            'materialize.responsive-video' : {
+                type : 'checkbox',
+                action: 'apply_class',
+                value: 'no-controls',
+                name: 'No Controls'
+            }
+        }
+        f.addComponentType(videoResponsive);
 
 
         var section = new PgComponentType('materialize.section', 'Section');
@@ -1300,8 +1363,9 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, videoContainer, videoResponsive, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
 });
+vi
