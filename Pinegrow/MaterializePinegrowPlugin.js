@@ -523,11 +523,249 @@ $(function() {
                             pgdropbutton.attr('data-activates', value);
                             return value;
                         }
+                    },
+                    'materialize.dropdown.induration' : {
+                        type : 'text',
+                        name: 'Induration (ms)',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-induration') || 300;
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-induration', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown.outduration' : {
+                        type : 'text',
+                        name: 'Outduration (ms)',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-outduration') || 250;
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-outduration', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown.constrainwidth' : {
+                        type : 'select',
+                        name: 'Constrainwidth',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-constrainwidth') || 'true';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-constrainwidth', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown.hover' : {
+                        type : 'select',
+                        name: 'Hover',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-hover') || 'false';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-hover', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown.gutter' : {
+                        type : 'text',
+                        name: 'Spacing from the aligned edge',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-gutter') || '0';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-gutter', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.beloworigin' : {
+                        type : 'select',
+                        name: 'Show below the activator',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            return pgdropbutton.attr('data-beloworigin') || 'false';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el.find('.dropdown-button'));
+                            pgdropbutton.attr('data-beloworigin', value);
+                            return value;
+                        }
                     }
                 }
             }
         };
         f.addComponentType(dropdown);
+
+
+        var dropdownBtn = new PgComponentType('materialize.dropdown-btn', 'Dropdown Button');
+        dropdownBtn.selector = '.dropdown-button';
+        dropdownBtn.parent_selector = 'body';
+        dropdownBtn.preview_image = 'dropdown.png';
+        dropdownBtn.code = '<a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>';
+        dropdownBtn.tags = 'major';
+        dropdownBtn.sections = {
+            'materialize.dropdown-btn' : {
+                name : 'Dropdown Button Options',
+                fields : {
+                    'materialize.dropdown-btn.induration' : {
+                        type : 'text',
+                        name: 'Induration (ms)',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-induration');
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-induration', value) || 300;
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.outduration': {
+                        type : 'text',
+                        name: 'Outduration (ms)',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-outduration') || 250;
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-outduration', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.constrainwidth' : {
+                        type : 'select',
+                        name: 'Constrainwidth',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-constrainwidth') || 'true';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-constrainwidth', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.hover' : {
+                        type : 'select',
+                        name: 'Hover',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-hover') || 'false';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-hover', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.gutter' : {
+                        type : 'text',
+                        name: 'Spacing from the aligned edge',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-gutter') || '0';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-gutter', value);
+                            return value;
+                        }
+                    },
+                    'materialize.dropdown-btn.beloworigin' : {
+                        type : 'select',
+                        name: 'Show below the activator',
+                        action: 'custom',
+                        options: [
+                            {key: 'true', name: 'True'},
+                            {key: 'false', name: 'False'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            return pgdropbutton.attr('data-beloworigin') || 'false';
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgdropbutton = new pgQuery($el);
+                            pgdropbutton.attr('data-beloworigin', value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(dropdownBtn);
 
 
         var container = new PgComponentType('materialize.container', 'Container');
