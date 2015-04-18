@@ -1359,6 +1359,68 @@ $(function() {
         f.addComponentType(pagination);
 
 
+        var collapsible = new PgComponentType('materialize.collapsible', 'Collapsible');
+        collapsible.selector = '.collapsible';
+        collapsible.parent_selector = 'body';
+        collapsible.preview_image = 'collapsible.png';
+        collapsible.code = '<ul class="collapsible" data-collapsible="accordion">\
+          <li>\
+            <div class="collapsible-header"><i class="mdi-image-filter-drama"></i>First</div>\
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>\
+          </li>\
+          <li>\
+            <div class="collapsible-header"><i class="mdi-maps-place"></i>Second</div>\
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>\
+          </li>\
+          <li>\
+            <div class="collapsible-header"><i class="mdi-social-whatshot"></i>Third</div>\
+            <div class="collapsible-body"><p>Lorem ipsum dolor sit amet.</p></div>\
+          </li>\
+        </ul>';
+        collapsible.sections = {
+            'materialize.collapsible' : {
+                name : 'Collapsible Options',
+                fields : {
+                    'materialize.collapsible.type' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Type',
+                        options: [
+                          {key: 'popout', name: "Popout"}
+                        ]
+                    },
+                    'materialize.collapsible.style' : {
+                        type : 'select',
+                        name: 'Style',
+                        action: 'custom',
+                        show_empty: true,
+                        live_update: true,
+                        options: [
+                            {key: 'accordion', name: 'Accordion'},
+                            {key: 'expandable', name: 'Expandable'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('data-collapsible');
+                        },
+                        set_value: function(obj, value, values) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            if (value && value.length > 0)
+                                pgel.attr('data-collapsible', value);
+                            else
+                                pgel.removeAttr('data-collapsible');
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(collapsible);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -1551,7 +1613,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, footer]);
 
         f.addLibSection(libsection);
    });
