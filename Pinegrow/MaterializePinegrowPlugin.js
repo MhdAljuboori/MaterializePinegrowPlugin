@@ -1781,6 +1781,76 @@ $(function() {
         f.addComponentType(slider);
 
 
+        var modal = new PgComponentType('materialize.modal', 'Modal');
+        modal.selector = '.modal-container';
+        modal.parent_selector = 'body';
+        modal.preview_image = 'modal.png';
+        modal.code = '<div class="modal-container">\
+          <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>\
+          <div id="modal1" class="modal">\
+            <div class="modal-content">\
+              <h4>Modal Header</h4>\
+              <p>A bunch of text</p>\
+            </div>\
+            <div class="modal-footer">\
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>\
+            </div>\
+          </div>\
+        </div>';
+        modal.sections = {
+            'materialize.modal' : {
+                name : 'Modal Options',
+                fields : {
+                    'materialize.modal.modal_name' : {
+                        type : 'text',
+                        name: 'Modal Name',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgmodal = new pgQuery($el.find('.modal'));
+                            return pgmodal.attr('id');
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgmodal = new pgQuery($el.find('.modal'));
+                            var pgtrigger = new pgQuery($el.find('.modal-trigger'));
+                            pgmodal.attr('id', value);
+                            pgtrigger.attr('href', "#" + value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(modal);
+
+
+        var modalBody = new PgComponentType('materialize.modal-body', 'Modal Body');
+        modalBody.selector = '.modal';
+        modalBody.parent_selector = 'body';
+        modalBody.sections = {
+            'materialize.modal-body' : {
+                name : 'Modal Body Options',
+                fields : {
+                    'materialize.modal-body.footer-style' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'modal-fixed-footer',
+                        name: 'Fixed Footer'
+                    },
+                    'materialize.modal-body.bottom-sheet' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'bottom-sheet',
+                        name: 'Bottom Sheet'
+                    }
+                }
+            }
+        };
+        f.addComponentType(modalBody);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -1989,7 +2059,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, modal, footer]);
 
         f.addLibSection(libsection);
    });
