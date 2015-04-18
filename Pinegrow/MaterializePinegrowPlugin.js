@@ -1712,6 +1712,75 @@ $(function() {
         f.addComponentType(tooltipped);
 
 
+        var materialboxed = new PgComponentType('materialize.materialboxed', 'Material Boxed');
+        materialboxed.selector = '.materialboxed';
+        materialboxed.parent_selector = 'body';
+        materialboxed.sections = {
+            'materialize.materialboxed' : {
+                name : 'Tooltip Options',
+                fields : {
+                    'materialize.materialboxed.caption' : {
+                        type : 'text',
+                        name: 'Caption',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('data-caption');
+                        },
+                        set_value: function(obj, value, values) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            pgel.attr('data-caption', value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(materialboxed);
+
+
+        var slider = new PgComponentType('materialize.slider', 'Slider');
+        slider.selector = '.slider';
+        slider.parent_selector = 'body';
+        slider.preview_image = 'slider.png';
+        slider.code = '<div class="slider">\
+            <ul class="slides">\
+              <li>\
+                <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->\
+                <div class="caption center-align">\
+                  <h3>This is our big Tagline!</h3>\
+                  <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
+                </div>\
+              </li>\
+              <li>\
+                <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->\
+                <div class="caption left-align">\
+                  <h3>Left Aligned Caption</h3>\
+                  <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
+                </div>\
+              </li>\
+              <li>\
+                <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->\
+                <div class="caption right-align">\
+                  <h3>Right Aligned Caption</h3>\
+                  <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
+                </div>\
+              </li>\
+              <li>\
+                <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->\
+                <div class="caption center-align">\
+                  <h3>This is our big Tagline!</h3>\
+                  <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
+                </div>\
+              </li>\
+            </ul>\
+          </div>';
+        f.addComponentType(slider);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -1898,11 +1967,17 @@ $(function() {
           'materialize.anything_js' : {
             name: "Javascript Options",
             fields: {
-                'materialize.anything.js.tooltipped' : {
+                'materialize.anything_js.tooltipped' : {
                     type : 'checkbox',
                     action: 'apply_class',
                     value: 'tooltipped',
                     name: 'Tooltip'
+                },
+                'materialize.anything_js.materialboxed' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'materialboxed',
+                    name: 'Material Boxed'
                 }
             }
           }
@@ -1914,7 +1989,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, footer]);
 
         f.addLibSection(libsection);
    });
