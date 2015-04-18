@@ -327,6 +327,12 @@ $(function() {
                         action: 'apply_class',
                         value: 'dismissable',
                         name: 'Dismissable'
+                    },
+                    'materialize.collection-item.active' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'active',
+                        name: 'Active?'
                     }
                 }
             }
