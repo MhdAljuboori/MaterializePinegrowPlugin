@@ -1322,6 +1322,27 @@ $(function() {
         f.addComponentType(selectField);
 
 
+        var datePicker = new PgComponentType('materialize.date-picker', 'Date Picker');
+        datePicker.selector = 'input[type="date"]';
+        datePicker.parent_selector = 'body';
+        datePicker.preview_image = 'datePicker.png';
+        datePicker.code = '<input type="date" class="datepicker" placeholder="Pick a date">'
+        datePicker.sections = {
+            'materialize.date-picker' : {
+                name : 'Date Picker Options',
+                fields : {
+                    'materialize.date-picker.style' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'datepicker',
+                        name: 'Materialize Date Picker'
+                    }
+                }
+            }
+        };
+        f.addComponentType(datePicker);
+
+
         var pagination = new PgComponentType('materialize.pagination', 'Pagination');
         pagination.selector = '.pagination';
         pagination.parent_selector = 'body';
@@ -1530,7 +1551,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, footer]);
 
         f.addLibSection(libsection);
    });
