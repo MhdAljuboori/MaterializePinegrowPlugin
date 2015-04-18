@@ -1421,6 +1421,59 @@ $(function() {
         f.addComponentType(collapsible);
 
 
+        var tooltipped = new PgComponentType('materialize.tooltipped', 'Tooltip');
+        tooltipped.selector = '.tooltipped';
+        tooltipped.parent_selector = 'body';
+        tooltipped.sections = {
+            'materialize.tooltipped' : {
+                name : 'Tooltip Options',
+                fields : {
+                    'materialize.tooltipped.position' : {
+                        type : 'select',
+                        name: 'Position',
+                        action: 'custom',
+                        live_update: true,
+                        options: [
+                            {key: 'bottom', name: 'Bottom'},
+                            {key: 'top', name: 'Top'},
+                            {key: 'left', name: 'Left'},
+                            {key: 'right', name: 'Right'}
+                        ],
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('data-position');
+                        },
+                        set_value: function(obj, value, values) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            pgel.attr('data-position', value);
+                            return value;
+                        }
+                    },
+                    'materialize.tooltipped.text' : {
+                        type : 'text',
+                        name: 'Text',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('data-tooltip');
+                        },
+                        set_value: function(obj, value, values) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            pgel.attr('data-tooltip', value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
+        f.addComponentType(tooltipped);
+
+
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
         footer.parent_selector = 'body';
@@ -1603,10 +1656,20 @@ $(function() {
                     name: 'Flow Text'
                 }
              }
+          },
+          'materialize.anything_js' : {
+            name: "Javascript Options",
+            fields: {
+                'materialize.anything.js.tooltipped' : {
+                    type : 'checkbox',
+                    action: 'apply_class',
+                    value: 'tooltipped',
+                    name: 'Tooltip'
+                }
+            }
           }
         };
         f.addComponentType(anything);
-
 
         //Tell Pinegrow about the framework
         pinegrow.addFramework(f);
