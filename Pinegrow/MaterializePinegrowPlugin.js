@@ -136,7 +136,7 @@ $(function() {
         var navbar = new PgComponentType('materialize.navbar', 'Navbar');
         navbar.selector = '.navbar-container';
         navbar.parent_selector = 'body';
-        navbar.preview_image = 'navbar.jpg';
+        navbar.preview_image = 'navbar.png';
         navbar.code = '<div class="navbar-container">\
           <nav>\
             <div class="nav-wrapper">\
@@ -271,6 +271,58 @@ $(function() {
         </ul>';
         collapseList.tags = 'major';
         f.addComponentType(collapseList);
+
+
+        var sideNav = new PgComponentType('materialize.side-nav', 'Sidenav');
+        sideNav.selector = '.side-nav';
+        sideNav.parent_selector = 'body';
+        sideNav.preview_image = 'sideNav.png';
+        sideNav.code = '<ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">\
+            <li class="logo">\
+                <a id="logo-container" href="#" class="brand-logo">Logo</a>\
+            </li>\
+            <li class="bold">\
+                <a href="#" class="waves-effect waves-teal">First Link</a>\
+            </li>\
+            <li class="bold">\
+                <a href="#" class="waves-effect waves-teal">Second Link</a>\
+            </li>\
+            <li class="no-padding">\
+              <ul class="collapsible collapsible-accordion">\
+                <li class="bold"><a class="collapsible-header waves-effect waves-teal">Third Link</a>\
+                  <div class="collapsible-body">\
+                    <ul>\
+                      <li><a href="#">Third, First</a></li>\
+                      <li><a href="#">Third, Second</a></li>\
+                    </ul>\
+                  </div>\
+                </li>\
+                <li class="bold"><a class="collapsible-header waves-effect waves-teal">Fourth Link</a>\
+                  <div class="collapsible-body">\
+                    <ul>\
+                      <li><a href="#">Fourth, First</a></li>\
+                      <li><a href="#">Fourth, Second</a></li>\
+                    </ul>\
+                  </div>\
+                </li>\
+              </ul>\
+            </li>\
+        </ul>';
+        sideNav.tags = 'major';
+        sideNav.sections = {
+            'materialize.side-nav' : {
+                name : 'Sidenav options',
+                fields : {
+                    'materialize.sidenav.fixed' : {
+                        type : 'checkbox',
+                        action: 'apply_class',
+                        value: 'fixed',
+                        name: 'Fixed sidenav'
+                    }
+                }
+            }
+        };
+        f.addComponentType(sideNav);
 
 
         var collapseButton = new PgComponentType('materialize.collapse-button', 'Collapse Button');
@@ -2122,7 +2174,7 @@ $(function() {
 
         var libsection = new PgFrameworkLibSection("MaterializePinegrowPlugin_lib", "Components");
         //Pass components in array
-        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, modal, parallax, tabs, footer]);
+        libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, sideNav, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, modal, parallax, tabs, footer]);
 
         f.addLibSection(libsection);
    });
