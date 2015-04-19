@@ -1,0 +1,152 @@
+
+
+.side-nav.fixed
+{
+    overflow: hidden;
+}
+
+.side-nav.fixed:hover
+{
+    overflow: auto;
+}
+
+ul.side-nav.fixed li.logo
+{
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    margin-top: 32px;
+    margin-bottom: 16px;
+}
+
+ul.side-nav.fixed li.logo:hover
+{
+    background-color: transparent;
+}
+
+#logo-container
+{
+    height: 57px;
+    margin-bottom: 32px;
+}
+
+ul.side-nav.fixed li a
+{
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 44px;
+    height: 44px;
+}
+
+ul.side-nav.fixed li:hover,
+ul.side-nav.fixed li.active
+{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+ul.side-nav.fixed li.no-padding:hover
+{
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.top-nav
+{
+    height: 122px;
+    box-shadow: none;
+}
+
+header,
+main,
+footer
+{
+    padding-left: 240px;
+}
+
+nav.top-nav a.page-title
+{
+    line-height: 122px;
+    font-size: 48px;
+}
+
+a.button-collapse.top-nav.full
+{
+    line-height: 122px;
+}
+
+a.button-collapse.top-nav
+{
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    left: 7.5%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 32px;
+    z-index: 2;
+}
+
+.col.grid-example
+{
+    border: 1px solid #eee;
+    margin: 7px 0;
+    text-align: center;
+    line-height: 50px;
+    font-size: 28px;
+    background-color: tomato;
+    color: white;
+    padding: 0;
+}
+
+.shadow-demo
+{
+    background-color: #26a69a;
+    width: 125px;
+    height: 125px;
+    margin: 20px auto;
+}
+
+.btn, .btn-large
+{
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.dropdown-container
+{
+    margin-bottom: 20px;
+}
+
+.modal-container
+{
+    display: inline-block;
+}
+
+@media only screen and (min-width: 993px)
+{
+    .container
+    {
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 992px)
+{
+    header,
+    main,
+    footer
+    {
+        padding-left: 0;
+    }
+    nav .nav-wrapper
+    {
+        text-align: center;
+    }
+    nav .nav-wrapper a.page-title
+    {
+        font-size: 36px;
+    }
+}
+
