@@ -434,11 +434,26 @@ $(function() {
                         value: 'waves-effect',
                         name: 'Wave Effect'
                     },
-                    'materialize.button.wavesLight' : {
+                    'materialize.button.wavesCircle' : {
                         type : 'checkbox',
                         action: 'apply_class',
-                        value: 'waves-light',
-                        name: 'Wave Light'
+                        value: 'waves-circle',
+                        name: 'Wave Circle'
+                    },
+                    'materialize.button.wavesColor' : {
+                        type : 'select',
+                        name: 'Wave Color',
+                        action: 'apply_class',
+                        show_empty: true,
+                        options: [
+                            {key: 'waves-light', name: 'Light'},
+                            {key: 'waves-red', name: 'Red'},
+                            {key: 'waves-yellow', name: 'Yellow'},
+                            {key: 'waves-orange', name: 'Orange'},
+                            {key: 'waves-purple', name: 'Purple'},
+                            {key: 'waves-green', name: 'Green'},
+                            {key: 'waves-teal', name: 'Teal'}
+                        ]
                     },
                     'materialize.button.floating' : {
                         type : 'checkbox',
@@ -1039,11 +1054,26 @@ $(function() {
                         value: 'waves-effect',
                         name: 'Wave Effect'
                     },
-                    'materialize.card-image-container.wavesLight' : {
+                    'materialize.card-image-container.wavesCircle' : {
                         type : 'checkbox',
                         action: 'apply_class',
-                        value: 'waves-light',
-                        name: 'Wave Light'
+                        value: 'waves-circle',
+                        name: 'Wave Circle'
+                    },
+                    'materialize.card-image-container.wavesColor' : {
+                        type : 'select',
+                        name: 'Wave Color',
+                        action: 'apply_class',
+                        show_empty: true,
+                        options: [
+                            {key: 'waves-light', name: 'Light'},
+                            {key: 'waves-red', name: 'Red'},
+                            {key: 'waves-yellow', name: 'Yellow'},
+                            {key: 'waves-orange', name: 'Orange'},
+                            {key: 'waves-purple', name: 'Purple'},
+                            {key: 'waves-green', name: 'Green'},
+                            {key: 'waves-teal', name: 'Teal'}
+                        ]
                     },
                     'materialize.card-image-container.wavesBlock' : {
                         type : 'checkbox',
@@ -1066,7 +1096,7 @@ $(function() {
             'materialize.card-image' : {
                 name : 'Card Image Options',
                 fields : {
-                    'materialize.card-image.wavesEffect' : {
+                    'materialize.card-image.activator' : {
                         type : 'checkbox',
                         action: 'apply_class',
                         value: 'activator',
