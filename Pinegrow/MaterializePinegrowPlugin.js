@@ -49,7 +49,6 @@ $(function() {
 
         var icons = new PgComponentType('materialize.icons', 'Icon');
         icons.selector = '[class^="mdi-"]*';
-        icons.parent_selector = 'body';
         icons.preview_image = 'icon.png';
         icons.code = '<i class="mdi-action-3d-rotation"></i>';
         icons.tags = 'major';
@@ -112,7 +111,6 @@ $(function() {
 
         var img = new PgComponentType('materialize.img', '');
         img.selector = 'img';
-        img.parent_selector = 'body';
         img.sections = {
           'materialize.img' : {
              name: "Image Options",
@@ -137,7 +135,6 @@ $(function() {
 
         var navbar = new PgComponentType('materialize.navbar', 'Navbar');
         navbar.selector = '.navbar-container';
-        navbar.parent_selector = 'body';
         navbar.preview_image = 'navbar.png';
         navbar.code = '<div class="navbar-container">\
           <nav>\
@@ -277,7 +274,6 @@ $(function() {
 
         var sideNav = new PgComponentType('materialize.side-nav', 'Sidenav');
         sideNav.selector = '.side-nav';
-        sideNav.parent_selector = 'body';
         sideNav.preview_image = 'sideNav.png';
         sideNav.code = '<ul id="nav-mobile" class="side-nav fixed" style="width: 240px;">\
             <li class="logo">\
@@ -341,7 +337,6 @@ $(function() {
 
         var collection = new PgComponentType('materialize.collection', 'Collection');
         collection.selector = '.collection';
-        collection.parent_selector = 'body';
         collection.preview_image = 'collection.png';
         collection.code = '<ul class="collection">\
           <li class="collection-item">Alvin<span class="badge">1</span></li>\
@@ -452,7 +447,6 @@ $(function() {
 
         var badge = new PgComponentType('materialize.badge', 'Badge');
         badge.selector = '.badge';
-        badge.parent_selector = 'body';
         badge.preview_image = 'badge.png';
         badge.code = '<span class="badge">144</span>';
         badge.tags = 'major';
@@ -474,7 +468,6 @@ $(function() {
 
         var button = new PgComponentType('materialize.button', 'Button');
         button.selector = 'a';
-        button.parent_selector = 'body';
         button.preview_image = 'button.png';
         button.code = '<a class="btn">Stuff</a>';
         button.tags = 'major';
@@ -540,7 +533,6 @@ $(function() {
 
         var fixedActionButton = new PgComponentType('materialize.button', 'Fixed Action Button');
         fixedActionButton.selector = '.fixed-action-btn';
-        fixedActionButton.parent_selector = 'body';
         fixedActionButton.preview_image = 'fixedActionButton.png';
         fixedActionButton.code = '<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">\
           <a class="btn-floating btn-large red">\
@@ -559,7 +551,6 @@ $(function() {
 
         var dropdown = new PgComponentType('materialize.dropdown', 'Dropdown');
         dropdown.selector = '.dropdown-container';
-        dropdown.parent_selector = 'body';
         dropdown.preview_image = 'dropdown.png';
         dropdown.code = '<div class="dropdown-container">\
           <a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>\
@@ -712,7 +703,6 @@ $(function() {
 
         var dropdownBtn = new PgComponentType('materialize.dropdown-btn', 'Dropdown Button');
         dropdownBtn.selector = '.dropdown-button';
-        dropdownBtn.parent_selector = 'body';
         dropdownBtn.preview_image = 'dropdown.png';
         dropdownBtn.code = '<a class="btn dropdown-button" href="#!" data-activates="dropdown2">Dropdown<i class="mdi-navigation-arrow-drop-down right"></i></a>';
         dropdownBtn.tags = 'major';
@@ -839,7 +829,6 @@ $(function() {
 
         var container = new PgComponentType('materialize.container', 'Container');
         container.selector = '.container';
-        container.parent_selector = 'body';
         container.code = '<div class="pg-empty-placeholder container"></div>';
         container.tags = 'major';
         f.addComponentType(container);
@@ -847,7 +836,6 @@ $(function() {
 
         var blockquote = new PgComponentType('materialize.blockquote', 'Blockquote');
         blockquote.selector = 'blockquote';
-        blockquote.parent_selector = 'body';
         blockquote.preview_image = 'blockquote.png';
         blockquote.code = '<blockquote>\
           This is an example quotation that uses the blockquote tag.\
@@ -858,7 +846,6 @@ $(function() {
 
         var verAlign = new PgComponentType('materialize.verAlign', 'Vertical Align');
         verAlign.selector = '.valign-wrapper';
-        verAlign.parent_selector = 'body';
         verAlign.code = '<div class="valign-wrapper">\
           <h5 class="valign">This should be vertically aligned</h5>\
         </div>';
@@ -868,7 +855,6 @@ $(function() {
 
         var row = new PgComponentType('materialize.row', 'Row');
         row.selector = '.row';
-        row.parent_selector = 'body';
         row.code = '<div class="pg-empty-placeholder row"></div>';
         row.tags = 'major';
         f.addComponentType(row);
@@ -876,7 +862,6 @@ $(function() {
 
         var divider = new PgComponentType('materialize.divider', 'Divider');
         divider.selector = '.divider';
-        divider.parent_selector = 'body';
         divider.code = '<div class="divider"></div>';
         divider.tags = 'major';
         f.addComponentType(divider);
@@ -884,7 +869,6 @@ $(function() {
 
         var videoContainer = new PgComponentType('materialize.video-container', 'Video Container');
         videoContainer.selector = '.video-container';
-        videoContainer.parent_selector = 'body';
         videoContainer.code = '<div class="video-container">\
             <iframe width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>\
         </div>';
@@ -907,7 +891,6 @@ $(function() {
 
         var videoResponsive = new PgComponentType('materialize.responsive-video', 'Video Responsive');
         videoResponsive.selector = '.responsive-video';
-        videoResponsive.parent_selector = 'body';
         videoResponsive.code = '<video class="responsive-video" controls>\
             <source src="" type="video/mp4">\
         </video>';
@@ -917,7 +900,6 @@ $(function() {
 
         var section = new PgComponentType('materialize.section', 'Section');
         section.selector = '.section';
-        section.parent_selector = 'body';
         section.code = '<div class="pg-empty-placeholder section"></div>';
         section.tags = 'major';
         f.addComponentType(section);
@@ -925,7 +907,6 @@ $(function() {
 
         var table = new PgComponentType('materialize.table', 'Table');
         table.selector = 'table';
-        table.parent_selector = 'body';
         table.preview_image = 'table.png';
         table.code = '<table>\
             <thead>\
@@ -1115,7 +1096,6 @@ $(function() {
 
         var card = new PgComponentType('materialize.card', 'Card');
         card.selector = '.card';
-        card.parent_selector = 'body';
         card.preview_image = 'card.png';
         card.code = '<div class="card blue-grey darken-1">\
             <div class="card-content white-text">\
@@ -1262,7 +1242,6 @@ $(function() {
 
         var cardPanel = new PgComponentType('materialize.card-panel', 'Card Panel');
         cardPanel.selector = '.card-panel';
-        cardPanel.parent_selector = 'body';
         cardPanel.preview_image = 'cardPanel.png';
         cardPanel.code = '<div class="card-panel teal">\
           <span class="white-text">I am a very simple card. I am good at containing small bits of information.\
@@ -1274,7 +1253,6 @@ $(function() {
 
 
         var form = new PgComponentType('materialize.form', 'Form');
-        form.parent_selector = 'body';
         form.preview_image = 'form.png';
         form.code = '<div class="row">\
           <form class="col s12">\
@@ -1319,7 +1297,6 @@ $(function() {
 
         var radioButton = new PgComponentType('materialize.radio-button', 'Radio Button');
         radioButton.selector = 'input[type="radio"]';
-        radioButton.parent_selector = 'body';
         radioButton.sections = {
             'materialize.radio-button' : {
                 name : 'Radio Options',
@@ -1338,7 +1315,6 @@ $(function() {
 
         var checkbox = new PgComponentType('materialize.checkbox', 'Checkbox');
         checkbox.selector = 'input[type="checkbox"]';
-        checkbox.parent_selector = 'body';
         checkbox.sections = {
             'materialize.checkbox' : {
                 name : 'Checkbox Options',
@@ -1357,7 +1333,6 @@ $(function() {
 
         var switchInput = new PgComponentType('materialize.switch-input', 'Switch');
         switchInput.selector = '.switch';
-        switchInput.parent_selector = 'body';
         switchInput.preview_image = 'switchInput.png';
         switchInput.code = '<div class="switch">\
           <label>\
@@ -1372,7 +1347,6 @@ $(function() {
 
         var fileField = new PgComponentType('materialize.file-field', 'File Field');
         fileField.selector = '.file-field';
-        fileField.parent_selector = 'body';
         fileField.preview_image = 'fileField.png';
         fileField.code = '<div class="file-field input-field">\
           <input class="file-path validate" type="text"/>\
@@ -1386,7 +1360,6 @@ $(function() {
 
         var rangeField = new PgComponentType('materialize.range-field', 'Range Field');
         rangeField.selector = '.range-field';
-        rangeField.parent_selector = 'body';
         rangeField.preview_image = 'rangeField.png';
         rangeField.code = '<p class="range-field">\
           <input type="range" id="test5" min="0" max="100" />\
@@ -1437,7 +1410,6 @@ $(function() {
 
         var formInput = new PgComponentType('materialize.form-input', 'Form Input');
         formInput.selector = 'input:not([type="submit"])';
-        formInput.parent_selector = 'body';
         formInput.sections = {
             'materialize.form-input' : {
                 name : 'Form Input Options',
@@ -1473,7 +1445,6 @@ $(function() {
 
         var progressBar = new PgComponentType('materialize.progress-bar', 'Progress Bar');
         progressBar.selector = '.progress';
-        progressBar.parent_selector = 'body';
         progressBar.preview_image = 'progressBar.png';
         progressBar.code = '<div class="progress">\
             <div class="determinate" style="width: 70%"></div>\
@@ -1596,14 +1567,12 @@ $(function() {
 
         var inputField = new PgComponentType('materialize.form-input-field', 'Form Input Field');
         inputField.selector = 'input-field';
-        inputField.parent_selector = 'body';
         inputField.code = '<div class="input-field"></div>'
         f.addComponentType(inputField);
 
 
         var preloadCircular = new PgComponentType('materialize.circular-preload', 'Circular Preload');
         preloadCircular.selector = '.preloader-wrapper';
-        preloadCircular.parent_selector = 'body';
         preloadCircular.preview_image = 'preloadCircular.png';
         preloadCircular.code = '<div class="preloader-wrapper big active">\
             <div class="spinner-layer spinner-blue-only">\
@@ -1681,7 +1650,6 @@ $(function() {
 
         var selectField = new PgComponentType('materialize.select-field', 'Select Field');
         selectField.selector = 'select';
-        selectField.parent_selector = 'body';
         selectField.preview_image = 'selectField.png';
         selectField.code = '<select class="browser-default">\
           <option value="" disabled selected>Choose your option</option>\
@@ -1707,7 +1675,6 @@ $(function() {
 
         var datePicker = new PgComponentType('materialize.date-picker', 'Date Picker');
         datePicker.selector = 'input[type="date"]';
-        datePicker.parent_selector = 'body';
         datePicker.preview_image = 'datePicker.png';
         datePicker.code = '<input type="date" class="datepicker" placeholder="Pick a date">'
         datePicker.sections = {
@@ -1728,7 +1695,6 @@ $(function() {
 
         var pagination = new PgComponentType('materialize.pagination', 'Pagination');
         pagination.selector = '.pagination';
-        pagination.parent_selector = 'body';
         pagination.preview_image = 'pagination.png';
         pagination.code = '<ul class="pagination">\
             <li class="disabled"><a href="#!"><i class="mdi-navigation-chevron-left"></i></a></li>\
@@ -1744,7 +1710,6 @@ $(function() {
 
         var collapsible = new PgComponentType('materialize.collapsible', 'Collapsible');
         collapsible.selector = '.collapsible';
-        collapsible.parent_selector = 'body';
         collapsible.preview_image = 'collapsible.png';
         collapsible.code = '<ul class="collapsible" data-collapsible="accordion">\
           <li>\
@@ -1806,7 +1771,6 @@ $(function() {
 
         var tooltipped = new PgComponentType('materialize.tooltipped', 'Tooltip');
         tooltipped.selector = '.tooltipped';
-        tooltipped.parent_selector = 'body';
         tooltipped.sections = {
             'materialize.tooltipped' : {
                 name : 'Tooltip Options',
@@ -1859,7 +1823,6 @@ $(function() {
 
         var materialboxed = new PgComponentType('materialize.materialboxed', 'Material Boxed');
         materialboxed.selector = '.materialboxed';
-        materialboxed.parent_selector = 'body';
         materialboxed.sections = {
             'materialize.materialboxed' : {
                 name : 'Tooltip Options',
@@ -1889,7 +1852,6 @@ $(function() {
 
         var slider = new PgComponentType('materialize.slider', 'Slider');
         slider.selector = '.slider';
-        slider.parent_selector = 'body';
         slider.preview_image = 'slider.png';
         slider.code = '<div class="slider">\
             <ul class="slides">\
@@ -1928,7 +1890,6 @@ $(function() {
 
         var modal = new PgComponentType('materialize.modal', 'Modal');
         modal.selector = '.modal-container';
-        modal.parent_selector = 'body';
         modal.preview_image = 'modal.png';
         modal.code = '<div class="modal-container">\
           <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>\
@@ -1973,7 +1934,6 @@ $(function() {
 
         var modalBody = new PgComponentType('materialize.modal-body', 'Modal Body');
         modalBody.selector = '.modal';
-        modalBody.parent_selector = 'body';
         modalBody.sections = {
             'materialize.modal-body' : {
                 name : 'Modal Body Options',
@@ -1998,7 +1958,6 @@ $(function() {
 
         var parallax = new PgComponentType('materialize.parallax', 'Parallax');
         parallax.selector = '.parallax-container';
-        parallax.parent_selector = 'body';
         parallax.preview_image = 'parallax.png';
         parallax.code = '<div class="parallax-container">\
           <div class="parallax"><img src="images/parallax1.jpg"></div>\
@@ -2009,7 +1968,6 @@ $(function() {
 
         var tabs = new PgComponentType('materialize.tabs', 'Tabs');
         tabs.selector = '.tabs';
-        tabs.parent_selector = 'body';
         tabs.preview_image = 'tabs.png';
         tabs.code = '<div class="row">\
           <div class="col s12">\
@@ -2031,7 +1989,6 @@ $(function() {
 
         var footer = new PgComponentType('materialize.footer', 'Footer');
         footer.selector = '.page-footer';
-        footer.parent_selector = 'body';
         footer.preview_image = 'footer.png';
         footer.code = '<footer class="page-footer">\
           <div class="container">\
