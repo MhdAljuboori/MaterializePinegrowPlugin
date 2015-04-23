@@ -10,6 +10,8 @@ $(function() {
     //Wait for Pinegrow to wake-up
     $("body").one("pinegrow-ready", function(e, pinegrow) {
 
+        $('head').append('<link href="https://cdn.rawgit.com/MhdAljuboori/d3f7a630db7ca524a63d/raw/materializecss-icon.css" rel="stylesheet">');
+
         //Create new Pinegrow framework object
         var f = new PgFramework("MaterializePinegrowPlugin", "Materialize");
 
