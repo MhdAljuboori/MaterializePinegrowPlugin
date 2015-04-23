@@ -2003,7 +2003,7 @@ $(function() {
 
         var anything = new PgComponentType('materialize.anything', '');
         anything.selector = '*';
-        anything.parent_selector = 'body';
+        anything.display_name = 'tag';
         anything.sections = {
           'materialize.anything' : {
              name: "General Options",
