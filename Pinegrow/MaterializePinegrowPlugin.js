@@ -416,7 +416,7 @@ $(function() {
         avatarCollectionItem.parent_selector = '.collection';
         avatarCollectionItem.preview_image = 'avatarCollectionItem.png';
         avatarCollectionItem.code = '<li class="collection-item avatar">\
-          <img src="images/yuna.jpg" alt="" class="circle">\
+          <img src="assets/img/user.png" class="circle">\
           <span class="title">Title</span>\
           <p>First Line <br>\
              Second Line\
@@ -1135,7 +1135,7 @@ $(function() {
         cardImageContainer.parent_selector = '.card';
         cardImageContainer.preview_image = 'cardImage.png';
         cardImageContainer.code = '<div class="card-image">\
-          <img src="images/sample-1.jpg">\
+          <img src="assets/img/sample.jpg">\
           <span class="card-title">Card Title</span>\
         </div>';
         cardImageContainer.tags = 'major';
@@ -1186,7 +1186,7 @@ $(function() {
         cardImage.selector = '.card-image > img';
         cardImage.parent_selector = '.card-image';
         cardImage.preview_image = 'cardImage.png';
-        cardImage.code = '<img src="images/sample-1.jpg">';
+        cardImage.code = '<img src="assets/img/sample.jpg">';
         cardImage.sections = {
             'materialize.card-image' : {
                 name : 'Card Image Options',
@@ -1856,28 +1856,28 @@ $(function() {
         slider.code = '<div class="slider">\
             <ul class="slides">\
               <li>\
-                <img src="http://lorempixel.com/580/250/nature/1"> <!-- random image -->\
+                <img src="assets/img/slider1.jpg">\
                 <div class="caption center-align">\
                   <h3>This is our big Tagline!</h3>\
                   <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
                 </div>\
               </li>\
               <li>\
-                <img src="http://lorempixel.com/580/250/nature/2"> <!-- random image -->\
+                <img src="assets/img/slider2.jpg">\
                 <div class="caption left-align">\
                   <h3>Left Aligned Caption</h3>\
                   <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
                 </div>\
               </li>\
               <li>\
-                <img src="http://lorempixel.com/580/250/nature/3"> <!-- random image -->\
+                <img src="assets/img/slider3.jpg">\
                 <div class="caption right-align">\
                   <h3>Right Aligned Caption</h3>\
                   <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
                 </div>\
               </li>\
               <li>\
-                <img src="http://lorempixel.com/580/250/nature/4"> <!-- random image -->\
+                <img src="assets/img/slider4.jpg">\
                 <div class="caption center-align">\
                   <h3>This is our big Tagline!</h3>\
                   <h5 class="light grey-text text-lighten-3">Here\'s our small slogan.</h5>\
@@ -1960,7 +1960,7 @@ $(function() {
         parallax.selector = '.parallax-container';
         parallax.preview_image = 'parallax.png';
         parallax.code = '<div class="parallax-container">\
-          <div class="parallax"><img src="images/parallax1.jpg"></div>\
+          <div class="parallax"><img src="assets/img/parallax.jpg"></div>\
         </div>';
         parallax.tags = 'major';
         f.addComponentType(parallax);
