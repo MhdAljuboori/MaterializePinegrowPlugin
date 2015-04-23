@@ -990,7 +990,7 @@ $(function() {
                         type : 'select',
                         action: 'apply_class',
                         show_empty: true,
-                        name: 'Medium Screen Size',
+                        name: 'Large Screen Size',
                         options: [
                             {key: 'l1', name: "l1"},
                             {key: 'l2', name: "l2"},
@@ -1045,7 +1045,68 @@ $(function() {
                             {key: 's11', name: "s11"},
                             {key: 's12', name: "s12"}
                         ]
+                    },
+                    'materialize.column.l-offset' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Offset on large screens',
+                        options: [
+                            {key: 'offset-l1', name: "Offset 1"},
+                            {key: 'offset-l2', name: "Offset 2"},
+                            {key: 'offset-l3', name: "Offset 3"},
+                            {key: 'offset-l4', name: "Offset 4"},
+                            {key: 'offset-l5', name: "Offset 5"},
+                            {key: 'offset-l6', name: "Offset 6"},
+                            {key: 'offset-l7', name: "Offset 7"},
+                            {key: 'offset-l8', name: "Offset 8"},
+                            {key: 'offset-l9', name: "Offset 9"},
+                            {key: 'offset-l10', name: "Offset 10"},
+                            {key: 'offset-l11', name: "Offset 11"},
+                            {key: 'offset-l12', name: "Offset 12"},
+                        ]
+                    },
+                    'materialize.column.m-offset' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Offset on medium screens',
+                        options: [
+                            {key: 'offset-m1', name: "Offset 1"},
+                            {key: 'offset-m2', name: "Offset 2"},
+                            {key: 'offset-m3', name: "Offset 3"},
+                            {key: 'offset-m4', name: "Offset 4"},
+                            {key: 'offset-m5', name: "Offset 5"},
+                            {key: 'offset-m6', name: "Offset 6"},
+                            {key: 'offset-m7', name: "Offset 7"},
+                            {key: 'offset-m8', name: "Offset 8"},
+                            {key: 'offset-m9', name: "Offset 9"},
+                            {key: 'offset-m10', name: "Offset 10"},
+                            {key: 'offset-m11', name: "Offset 11"},
+                            {key: 'offset-m12', name: "Offset 12"}
+                        ]
+                    },
+                    'materialize.column.s-offset' : {
+                        type : 'select',
+                        action: 'apply_class',
+                        show_empty: true,
+                        name: 'Offset on small screens',
+                        options: [
+                            {key: 'offset-s1', name: "Offset 1"},
+                            {key: 'offset-s2', name: "Offset 2"},
+                            {key: 'offset-s3', name: "Offset 3"},
+                            {key: 'offset-s4', name: "Offset 4"},
+                            {key: 'offset-s5', name: "Offset 5"},
+                            {key: 'offset-s6', name: "Offset 6"},
+                            {key: 'offset-s7', name: "Offset 7"},
+                            {key: 'offset-s8', name: "Offset 8"},
+                            {key: 'offset-s9', name: "Offset 9"},
+                            {key: 'offset-s10', name: "Offset 10"},
+                            {key: 'offset-s11', name: "Offset 11"},
+                            {key: 'offset-s12', name: "Offset 12"}
+                        ]
                     }
+
                 }
             }
         };
