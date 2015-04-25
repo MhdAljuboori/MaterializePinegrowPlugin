@@ -328,10 +328,31 @@ $(function() {
         collapseButton.parent_selector = '.nav-wrapper';
         collapseButton.preview_image = 'collapseButton.png';
         collapseButton.code = '<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>';
-        collapseButton.on_inserted = function() {
-          alert('Add $(".button-collapse").sideNav(); to your $(document).ready');
-        }
         collapseButton.tags = 'major';
+        collapseButton.sections = {
+            'materialize.dropDown' : {
+                name : 'Collapse Button Options',
+                fields : {
+                    'materialize.collapse-button.dataActiates' : {
+                        type : 'text',
+                        name: 'Data Activate',
+                        action: 'custom',
+                        live_update: true,
+                        get_value: function(obj) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            return pgel.attr('data-activates');
+                        },
+                        set_value: function(obj, value, values, oldValue, eventType) {
+                            var $el = obj.data;
+                            var pgel = new pgQuery($el);
+                            pgel.attr('data-activates', value);
+                            return value;
+                        }
+                    }
+                }
+            }
+        };
         f.addComponentType(collapseButton);
 
 
