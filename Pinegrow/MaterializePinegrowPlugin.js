@@ -10,8 +10,6 @@ $(function() {
     //Wait for Pinegrow to wake-up
     $("body").one("pinegrow-ready", function(e, pinegrow) {
 
-        $('head').append('<link href="https://cdn.rawgit.com/MhdAljuboori/d3f7a630db7ca524a63d/raw/materializecss-icon.css" rel="stylesheet">');
-
         //Create new Pinegrow framework object
         var f = new PgFramework("MaterializePinegrowPlugin", "Materialize");
 
@@ -22,7 +20,17 @@ $(function() {
         f.author = 'Mohammed Al-Juboori';
         f.author_link = 'https://github.com/MhdAljuboori/MaterializePinegrowPlugin';
 
-        f.setScriptFileByScriptTagId('plugin-materliaze'); //get url if script is included directly into edit.html
+
+        //Load local CSS file + fonts so that plugin works in offline mode. Include only when needed.
+        var materialize_icon_fonts_included = false;
+        var includeMaterializeIconFontsIntoPGUI = function() {
+            if(!materialize_icon_fonts_included) {
+                $('head').append('<link href="' + f.getResourceUrl('resources/materializecss-icon.css') + '" rel="stylesheet">');
+                materialize_icon_fonts_included = true;
+            }
+        }
+
+        f.setScriptFileByScriptTagId('plugin-materialize'); //get url if script is included directly into edit.html
 
         //Don't show these files in CSS tab
         f.ignore_css_files = [/materialize/i];
@@ -66,6 +74,10 @@ $(function() {
                     type: 'select',
                     name: 'Icon',
                     options: icons_options,
+                    on_fields_created : function() {
+                        //only include font css when neccessary
+                        includeMaterializeIconFontsIntoPGUI();
+                    },
                     rich: {
                         title: 'Select icon',
                         modal: true,
