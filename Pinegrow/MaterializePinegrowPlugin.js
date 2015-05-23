@@ -18,6 +18,12 @@ $(function() {
         f.type = "materialize";
         f.allow_single_type = true;
 
+        f.description = '<a href="http://materializecss.com/">Materialize</a> starting pages and components.';
+        f.author = 'Mohammed Al-Juboori';
+        f.author_link = 'https://github.com/MhdAljuboori/MaterializePinegrowPlugin';
+
+        f.setScriptFileByScriptTagId('plugin-materliaze'); //get url if script is included directly into edit.html
+
         //Don't show these files in CSS tab
         f.ignore_css_files = [/materialize/i];
 
@@ -353,6 +359,7 @@ $(function() {
                 }
             }
         };
+
         f.addComponentType(collapseButton);
 
 
@@ -893,6 +900,8 @@ $(function() {
         videoContainer.code = '<div class="video-container">\
             <iframe width="853" height="480" src="" frameborder="0" allowfullscreen></iframe>\
         </div>';
+        //Dragging iframe will mess up the UI. Preview image could also be used here.
+        videoContainer.drag_helper = '<div class="pg-empty-placeholder">Video container</div>';
         videoContainer.tags = 'major';
         videoContainer.sections = {
             'materialize.video-container' : {
@@ -915,6 +924,8 @@ $(function() {
         videoResponsive.code = '<video class="responsive-video" controls>\
             <source src="" type="video/mp4">\
         </video>';
+        //There's nothing to see in preview or while dragging. Preview image would be a nice alternative here:
+        videoResponsive.drag_helper = '<div class="pg-empty-placeholder">Video</div>';
         videoResponsive.tags = 'major';
         f.addComponentType(videoResponsive);
 
@@ -2218,5 +2229,19 @@ $(function() {
         libsection.setComponentTypes([icons, navbar, navbarLogo, navMobile, searchBar, sideNav, collapseList, collapseButton, collection, collectionItem, linkCollectionItem, avatarCollectionItem, collectionHeader, collectionItemWithSecondary, badge, dropdown, button, fixedActionButton, divider, table, videoContainer, videoResponsive, blockquote, section, verAlign, container, row, col, card, cardImageContainer, cardImage, cardContent, cardAction, cardReveal, cardPanel, form, inputField, selectField, switchInput, fileField, rangeField, datePicker, progressBar, preloadCircular, spinnerLayer, pagination, collapsible, slider, modal, parallax, tabs, footer]);
 
         f.addLibSection(libsection);
+
+        f.on_plugin_activated = function(pgPage) {
+            if(!f.detect(pgPage)) {
+                //Materialize CSS is not included on the page
+                var url = '//cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css';
+                pinegrow.showAlert('<p>Looks like that <b>Materialize CSS</b> is not included on the page.</p><p>Do you want to add Materialize CDN stylesheet to the page?</p><p><code>&lt;link rel="stylesheet" href="' + url + '"&gt;</code></p><p>You can also use <b>Page -&gt; Manage stylesheets</b> to manually include local or remote CSS file.</p>', "Add Materialize stylesheet", "Don\'t add it", "Add the CSS", null, function() {
+                    pgPage.addStylesheet(url);
+                    pinegrow.showQuickMessage('Materialize CSS was added to the page');
+                });
+            }
+        }
+
+        //Register starting page template
+        f.addTemplateProjectFromResourceFolder('template');
    });
 });
