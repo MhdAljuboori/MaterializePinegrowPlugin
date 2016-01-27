@@ -2245,7 +2245,7 @@ $(function() {
         f.on_plugin_activated = function(pgPage) {
             if(!f.detect(pgPage)) {
                 //Materialize CSS is not included on the page
-                var url = '//cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css';
+                var url = 'http://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/css/materialize.min.css';
                 pinegrow.showAlert('<p>Looks like that <b>Materialize CSS</b> is not included on the page.</p><p>Do you want to add Materialize CDN stylesheet to the page?</p><p><code>&lt;link rel="stylesheet" href="' + url + '"&gt;</code></p><p>You can also use <b>Page -&gt; Manage stylesheets</b> to manually include local or remote CSS file.</p>', "Add Materialize stylesheet", "Don\'t add it", "Add the CSS", null, function() {
                     pgPage.addStylesheet(url);
                     pinegrow.showQuickMessage('Materialize CSS was added to the page');
