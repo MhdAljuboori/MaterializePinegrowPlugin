@@ -1,7 +1,11 @@
 # Material Design Plugin for Pinegrow Web Editor
+![Outdated](https://img.shields.io/badge/status-outdated-lightgray.svg)
+
 [Pinegrow Web Editor](http://pinegrow.com/) is a desktop app that lets you build responsive websites faster with live multi-page editing, CSS styling and smart components for Bootstrap, Foundation, AngularJS and WordPress.
 
 The plugin is using [MaterializeCSS](http://materializecss.com/)
+
+**Materialize now updated in Pinegrow 2.7**
 
 Usage
 =====
