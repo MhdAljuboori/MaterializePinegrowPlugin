@@ -12,33 +12,21 @@
         <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
 
         <title>Materialize</title>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!-- Materialize core CSS -->
-        <link href="assets/css/materialize.css" rel="stylesheet">
+        <link href="materialize/css/materialize.css" rel="stylesheet">
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
-      <script src="assets/js/html5shiv.js"></script>
-      <script src="assets/js/respond.min.js"></script>
-    <![endif]-->
+            <script src="assets/js/html5shiv.js"></script>
+            <script src="assets/js/respond.min.js"></script>
+        <![endif]-->
+        <link href="style.css" rel="stylesheet">
     </head>
     <body>
-        <!-- Materialize core JavaScript
-    ================================================== -->
+        <!-- Materialize core JavaScript -->
         <!-- Placed at the end of the document so the pages load faster -->
         <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/materialize.js"></script>
-        <script>
-            $(document).ready(function() {
-                $('.slider').slider();
-                $('.parallax').parallax();
-                $(".dropdown-button").dropdown();
-                $(".button-collapse").sideNav();
-                $('select').material_select();
-                $('.datepicker').pickadate({
-                    selectMonths: true, // Creates a dropdown to control month
-                    selectYears: 15 // Creates a dropdown of 15 years to control year
-                });
-                $('.modal-trigger').leanModal();
-            });
-        </script>
+        <script src="materialize/js/materialize.js"></script>
+        <script src="index.js"></script>
     </body>
 </html>
